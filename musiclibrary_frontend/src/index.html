@@ -1,64 +1,47 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>ContactsApp</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="icon" type="image/png" href="http://fountainjs.io/assets/imgs/fountain.png" />
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>ContactsApp</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/png" href="http://fountainjs.io/assets/imgs/fountain.png"/>
+</head>
 
-  <body>
-    <nav>
-      <div class="nav-wrapper" >
-        <a class="brand-logo">ContactApp</a>
-        <ul class="right">
-          <li><a href="#">Test</a></li>
-        </ul>
-      </div>
+<body>
+<nav>
+  <div class="nav-wrapper">
+    <a class="brand-logo">MusicLib</a>
+    <ul class="right">
+      <li><a href="#">Test</a></li>
+    </ul>
+  </div>
 
-    </nav>
-    <div class="container">
-      <div ng-controller="ContactsListController as ctrl">
-        <h1>{{::ctrl.title}}</h1>
+</nav>
+<div class="container">
+  <div ng-controller="ArtistListController as ctrl">
+    <h1>{{::ctrl.title}}</h1>
 
-        <div class="row">
-        <form class="col s12" novalidate name="addForm" ng-submit="ctrl.addContact(newContact)">
-          <div class="row">
-            <div class="input-field col s6">
-              <input type="text" id="name" required ng-model="newContact.name"/>
-              <label for="name">Name</label>
-            </div>
-            <div class="input-field col s6">
-              <input type="text" id="username" required ng-model="newContact.username"/>
-              <label for="name">Username</label>
-            </div>
-          </div>
-            <div class="row">
-            <div class="input-field col s12">
-              <input type="email" id="email" required ng-model="newContact.email"/>
-              <label for="name"></span>Email</label>
-            </div>
-          </div>
-          <div class="row">
-            <button type="submit" class="btn" ng-disabled="addForm.$invalid">Add Contact</button>
-          </div>
-
-        </form>
+    <form name="artistAddFrom" class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Placeholder" id="artistName" type="text" ng-model="artist.name">
         </div>
-
-
-
-
-        <button class="btn" ng-click="ctrl.toggleList()" ng-class="{red: ctrl.showList}">Toggle list</button>
-        <ul class="collection" ng-show="ctrl.showList">
-          <li class="collection-item" ng-repeat="person in ctrl.contacts">
-            <span class="title">{{person.name}}</span>
-            <p>{{person.username}}</p><br/><p>{{person.email}}</p>
-          </li>
-        </ul>
+        <div class="col s6">
+          <input class="btn" type="submit" ng-click="ctrl.addArtist(artist)" value="Add artist"/>
+        </div>
       </div>
+    </form>
 
-    </div>
-  </body>
+    <button class="waves-effect waves-light btn" ng-click="ctrl.toggleList()">Toggle List</button>
+
+    <ul class="collection" ng-show="ctrl.showList">
+      <li class="collection-item" ng-repeat="artist in ctrl.artists">
+        <span class="title">{{artist.name}}</span>
+      </li>
+    </ul>
+  </div>
+
+</div>
+</body>
 </html>

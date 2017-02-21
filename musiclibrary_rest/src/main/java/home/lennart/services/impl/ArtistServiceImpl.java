@@ -18,8 +18,8 @@ public class ArtistServiceImpl implements ArtistService {
     private ArtistRepository artistRepository;
 
     @Override
-    public void addNewArtist(Artist artist) {
-        artistRepository.save(artist);
+    public Artist addNewArtist(String artistName) {
+        return artistRepository.save(new Artist(artistName));
     }
 
     @Override

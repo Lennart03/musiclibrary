@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface ArtistService {
 
-    void addNewArtist(Artist artist);
+    Artist addNewArtist(String artistName);
 
     Artist getArtist(String artistName);
 
