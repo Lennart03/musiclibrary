@@ -13,6 +13,8 @@ public interface ArtistService {
 
     Artist getArtist(String artistName);
 
+    Artist getArtist(Integer id);
+
     List<Artist> getAllArtists();
 
 }

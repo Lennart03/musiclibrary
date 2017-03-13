@@ -30,4 +30,10 @@ public class ArtistController {
         return artistService.addNewArtist(artistName);
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/artist/{id}")
+    public Artist getArtist(@PathVariable Integer id) {
+        Artist artist = artistService.getArtist(id);
+        return artist;
+    }
+
 }

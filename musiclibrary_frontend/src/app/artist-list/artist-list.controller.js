@@ -21,13 +21,18 @@ export class ArtistListController {
 
   toggleList() {
     this.showList = !this.showList;
+    console.log(this.artists);
   }
 
   addArtist(newArtist) {
-    this.$http.post(`${this.apiUrl}/artist`, newArtist.name).then((response) => {
-      let newArtist = reponse.data;
+    this.$http.post(`${this.apiUrl}/artist/${newArtist.name}`).then((response) => {
+      let newArtist = response.data;
       this.artists.push(newArtist);
     });
+  }
+
+  artistClicked(artistId) {
+
   }
 
 

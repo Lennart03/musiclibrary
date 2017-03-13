@@ -28,6 +28,11 @@ public class ArtistServiceImpl implements ArtistService {
     }
 
     @Override
+    public Artist getArtist(Integer id) {
+        return artistRepository.findOne(id);
+    }
+
+    @Override
     public List<Artist> getAllArtists() {
         return artistRepository.findAll();
     }

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,6 +18,10 @@ public class Album extends AbstractEntity {
 
     @OneToMany
     private List<Song> songs;
+
+    private String title;
+
+    private Date releaseYear;
 
     public Album() {
         songs = new ArrayList<>();
@@ -37,5 +42,7 @@ public class Album extends AbstractEntity {
     public void addSong(Song song) {
         songs.add(song);
     }
+
+
 
 }

@@ -23,12 +23,12 @@
     <h1>{{::ctrl.title}}</h1>
 
     <form name="artistAddFrom" class="col s12">
-      <div class="row">
+      <div class="row valign-wrapper">
         <div class="input-field col s6">
-          <input placeholder="Placeholder" id="artistName" type="text" ng-model="artist.name">
+          <input placeholder="Artist name" id="artistName" type="text" ng-model="artist.name">
         </div>
         <div class="col s6">
-          <input class="btn" type="submit" ng-click="ctrl.addArtist(artist)" value="Add artist"/>
+          <input class="btn valign" type="submit" ng-click="ctrl.addArtist(artist)" value="Add artist"/>
         </div>
       </div>
     </form>
@@ -37,7 +37,7 @@
 
     <ul class="collection" ng-show="ctrl.showList">
       <li class="collection-item" ng-repeat="artist in ctrl.artists">
-        <span class="title">{{artist.name}}</span>
+        <a href="app/artist-detail/artist-detail.html" ng-click="ctrl.artistClicked(artist)">{{artist.name}}</a>
       </li>
     </ul>
   </div>
